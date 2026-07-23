@@ -1,0 +1,29 @@
+---
+- name: configue webservers
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: update apt cache
+      apt:
+        update_cache: yes
+    - name: install nginx
+      apt: 
+        name: nginx
+        state: present
+    - name: ensure nginx is running or not
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+- name: configure database server
+  hosts: dbservers
+  become: yes
+  tasks:
+    - name: update apt cache
+      apt:
+        update_cache: yes
+    - name: Ensure basic utility package is present
+      apt:
+        name: curl
+        state: present

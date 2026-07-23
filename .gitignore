@@ -1,0 +1,18 @@
+# Private & Public SSH Keys
+tf-ansible-key
+tf-ansible-key.pub
+*.pem
+*.key
+
+# Terraform State Files & Backups (Crucial!)
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+
+# Dynamic Ansible Inventory (ip details expose hone se bachane ke liye)
+ansible/inventory.ini
+
+# OS / Editor Files
+.DS_Store
+Thumbs.db
